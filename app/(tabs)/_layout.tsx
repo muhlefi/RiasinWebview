@@ -1,24 +1,5 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { WebView } from 'react-native-webview';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-      />
-    </Tabs>
-  );
+export default function HomeScreen() {
+  return <WebView source={{ uri: "https://riasin.vercel.app/" }} />;
 }
